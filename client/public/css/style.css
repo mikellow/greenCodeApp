@@ -4,8 +4,17 @@ html, body {
   font-size: 0px; }
 
 body {
-  color: orange;
+  color: black;
   font-size: 14px; }
+
+.green {
+  color: #57BD57; }
+
+.makeVisible {
+  opacity: 0;
+  animation-name: makeVisible;
+  animation-duration: 5s;
+  animation-fill-mode: forwards; }
 
 .wrapper {
   display: table;
@@ -22,6 +31,11 @@ body {
   .wrapper .content * {
     position: relative;
     z-index: 999; }
+
+#welcomePage h3 {
+  color: white;
+  text-align: center;
+  font-size: 4em; }
 
 animation {
   display: block;
@@ -40,6 +54,7 @@ animation {
     animation svg rect {
       fill: white;
       /*stroke : #84E484;*/
+      stroke: white;
       animation-name: makeStroke;
       animation-duration: 2s;
       animation-fill-mode: forwards; }
@@ -66,4 +81,7 @@ animation {
     fill: #36DA36; } }
 @keyframes makeTransparent {
   to {
-    opacity: 0.1; } }
+    opacity: 0.0; } }
+@keyframes makeVisible {
+  to {
+    opacity: 1.0; } }

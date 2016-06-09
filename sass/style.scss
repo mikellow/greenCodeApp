@@ -1,6 +1,6 @@
 $font-size: 14px;
 
-$light-green:#84E484;
+$light-green: #57BD57;
 $dark-green: #233123;
 
 html, body {
@@ -10,8 +10,19 @@ html, body {
 }
 
 body {
-    color:orange;
+    color:black;
     font-size: $font-size;
+}
+
+.green {
+    color: $light-green;
+}
+
+.makeVisible{
+    opacity: 0;
+    animation-name: makeVisible;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
 
 .wrapper {
@@ -37,6 +48,16 @@ body {
     }
 }
 
+#welcomePage{
+    h3 {
+        color: white;
+        text-align: center;
+        font-size: 4em
+    }
+}
+
+
+
 
 animation {
     display: block;
@@ -60,8 +81,9 @@ animation {
 
         rect {
             fill: white;
+            
             /*stroke : #84E484;*/
-
+            stroke : white;
             animation-name: makeStroke;
             animation-duration: 2s;
             animation-fill-mode: forwards;
@@ -106,6 +128,12 @@ animation {
 
 @keyframes makeTransparent {
     to{
-        opacity : 0.1;
+        opacity : 0.0;
+    }
+}
+
+@keyframes makeVisible {
+    to{
+        opacity : 1.0;
     }
 }

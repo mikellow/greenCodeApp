@@ -86,6 +86,7 @@ var animationWelcome = (function(){
         setReleased(rectangle,releasedDelay);
 
         rectangle.addEventListener('mouseover',function(){
+            console.log('mouseover');
           if(this.getAttribute("class") === ""){
             this.setAttribute("class", "active");
           }
@@ -99,6 +100,7 @@ var animationWelcome = (function(){
           this.setAttribute("style", "");
           //this.className="active";
           this.setAttribute("class", "released");
+          setReleased(this);
         });
 
 
