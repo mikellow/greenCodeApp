@@ -1,5 +1,8 @@
 $font-size: 14px;
 
+$light-green:#84E484;
+$dark-green: #233123;
+
 html, body {
     height:100%;
     width: 100%;
@@ -14,7 +17,7 @@ body {
 .wrapper {
     display: table;
     width: 100%;
-    background-color: green;
+    background-color: $dark-green;
     &:nth-child(2n){
         background-color: grey;
     }
@@ -26,5 +29,44 @@ body {
         display: table-cell;
         vertical-align: middle;
         padding:10px;
+    }
+}
+
+
+animation {
+
+    svg {
+        background-color: #DBDCA0;
+
+        rect {
+            fill: white;
+        }
+        rect.active {
+            /*fill : red;*/
+            animation-name: makeActive;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
+
+        }
+        rect.released {
+            fill : green;
+            animation-name: makeTransparent;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes makeActive {
+    to{
+        fill : green;
+    }
+}
+
+@keyframes makeTransparent {
+
+    to{
+        opacity : 0.3;
     }
 }

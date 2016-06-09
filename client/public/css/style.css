@@ -10,7 +10,7 @@ body {
 .wrapper {
   display: table;
   width: 100%;
-  background-color: green; }
+  background-color: #233123; }
   .wrapper:nth-child(2n) {
     background-color: grey; }
   .wrapper.full-page {
@@ -19,3 +19,25 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 10px; }
+
+animation svg {
+  background-color: #DBDCA0; }
+  animation svg rect {
+    fill: white; }
+  animation svg rect.active {
+    /*fill : red;*/
+    animation-name: makeActive;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+  animation svg rect.released {
+    fill: green;
+    animation-name: makeTransparent;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+
+@keyframes makeActive {
+  to {
+    fill: green; } }
+@keyframes makeTransparent {
+  to {
+    opacity: 0.3; } }
