@@ -19,25 +19,51 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 10px; }
+  .wrapper .content * {
+    position: relative;
+    z-index: 999; }
 
-animation svg {
-  background-color: #DBDCA0; }
-  animation svg rect {
-    fill: white; }
-  animation svg rect.active {
-    /*fill : red;*/
-    animation-name: makeActive;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; }
-  animation svg rect.released {
-    fill: green;
-    animation-name: makeTransparent;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; }
+animation {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("/images/welcome-bg.jpg");
+  background-size: cover;
+  background-position: center; }
+  animation svg {
+    /* background-color: #DBDCA0;*/
+    width: 100%;
+    height: 100%; }
+    animation svg rect {
+      fill: white;
+      /*stroke : #84E484;*/
+      animation-name: makeStroke;
+      animation-duration: 2s;
+      animation-fill-mode: forwards; }
+    animation svg rect.active {
+      /*fill : red;*/
+      animation-delay: 0;
+      animation-name: makeActive;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards; }
+    animation svg rect.released {
+      fill: #36DA36;
+      animation-delay: 0;
+      animation-name: makeTransparent;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards; }
 
+@keyframes makeStroke {
+  from {
+    stroke: white; }
+  to {
+    stroke: #84E484; } }
 @keyframes makeActive {
   to {
-    fill: green; } }
+    fill: #36DA36; } }
 @keyframes makeTransparent {
   to {
-    opacity: 0.3; } }
+    opacity: 0.1; } }

@@ -16,6 +16,7 @@ body {
 
 .wrapper {
     display: table;
+    
     width: 100%;
     background-color: $dark-green;
     &:nth-child(2n){
@@ -30,43 +31,81 @@ body {
         vertical-align: middle;
         padding:10px;
     }
+    .content *{
+        position : relative;
+        z-index: 999;
+    }
 }
 
 
 animation {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+
+    background-image : url('/images/welcome-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    
+
 
     svg {
-        background-color: #DBDCA0;
+        /* background-color: #DBDCA0;*/
+        width: 100%;
+        height: 100%;
+        
 
         rect {
             fill: white;
+            /*stroke : #84E484;*/
+
+            animation-name: makeStroke;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+
+        }
+        rect.stroke {
+
         }
         rect.active {
             /*fill : red;*/
+            animation-delay : 0;
             animation-name: makeActive;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-fill-mode: forwards;
 
 
         }
         rect.released {
-            fill : green;
+            fill : #36DA36;
+            animation-delay : 0;
             animation-name: makeTransparent;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-fill-mode: forwards;
         }
     }
 }
 
+@keyframes makeStroke {
+    from{
+        stroke : white;
+    }
+    to{
+        stroke : #84E484;
+    }
+}
+
 @keyframes makeActive {
     to{
-        fill : green;
+        fill : #36DA36;
     }
 }
 
 @keyframes makeTransparent {
-
     to{
-        opacity : 0.3;
+        opacity : 0.1;
     }
 }
